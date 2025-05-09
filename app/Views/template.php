@@ -23,6 +23,12 @@
 
     <!-- Popper -->
     <script src="https://unpkg.com/@popperjs/core@2"></script>
+
+    <style>
+        [x-cloak] {
+            display: none;
+        }
+    </style>
 </head>
 
 <body class="m-0 font-sans text-base antialiased font-normal dark:bg-slate-900 leading-default bg-gray-50 text-slate-500">
@@ -114,5 +120,8 @@
 
 <!-- Main Script -->
 <script src="<?= base_url('assets/js/argon-dashboard-tailwind.js?v=1.0.1') ?>" async></script>
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
+
+<?= $this->renderSection('script') ?>
 
 </html>

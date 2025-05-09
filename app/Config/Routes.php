@@ -10,6 +10,6 @@ $routes->get('/', function () {
     return view('login');
 });
 $routes->get('/dashboard', function () {
-    return view('UUS/dashboard');
+    return view('BKM/dashboard');
 });
 

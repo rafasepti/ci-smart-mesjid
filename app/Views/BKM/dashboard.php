@@ -16,11 +16,11 @@
                     <div class="flex flex-row -mx-3">
                         <div class="flex-none w-2/3 max-w-full px-3">
                             <div>
-                                <p class="mb-0 font-sans text-sm font-semibold leading-normal uppercase dark:text-white dark:opacity-60">Today's Money</p>
-                                <h5 class="mb-2 font-bold dark:text-white">$53,000</h5>
-                                <p class="mb-0 dark:text-white dark:opacity-60">
-                                    <span class="text-sm font-bold leading-normal text-emerald-500">+55%</span>
-                                    since yesterday
+                                <p class="mb-0 font-sans text-sm leading-normal uppercase dark:text-white text-blue-500 dark:opacity-60">Dana Mesjid</p>
+                                <h5 class="mb-2 font-bold dark:text-white">RP6.000.000.000</h5>
+                                <p class="mb-0 dark:text-white dark:opacity-60 text-sm">
+                                    <span class="text-sm font-bold leading-normal text-emerald-500">+3.48%</span>
+                                    Dibandingkan bulan sebelumnya
                                 </p>
                             </div>
                         </div>
@@ -41,11 +41,11 @@
                     <div class="flex flex-row -mx-3">
                         <div class="flex-none w-2/3 max-w-full px-3">
                             <div>
-                                <p class="mb-0 font-sans text-sm font-semibold leading-normal uppercase dark:text-white dark:opacity-60">Today's Users</p>
-                                <h5 class="mb-2 font-bold dark:text-white">2,300</h5>
+                                <p class="mb-0 font-sans text-sm leading-normal uppercase dark:text-white text-emerald-500 dark:opacity-60">Pemasukan Mesjid</p>
+                                <h5 class="mb-2 font-bold dark:text-white">Rp275.000</h5>
                                 <p class="mb-0 dark:text-white dark:opacity-60">
-                                    <span class="text-sm font-bold leading-normal text-emerald-500">+3%</span>
-                                    since last week
+                                    <span class="text-sm font-bold leading-normal text-emerald-500">-5.77%</span>
+                                    Dibandingkan bulan sebelumnya
                                 </p>
                             </div>
                         </div>
@@ -69,11 +69,11 @@
                     <div class="flex flex-row -mx-3">
                         <div class="flex-none w-2/3 max-w-full px-3">
                             <div>
-                                <p class="mb-0 font-sans text-sm font-semibold leading-normal uppercase dark:text-white dark:opacity-60">New Clients</p>
-                                <h5 class="mb-2 font-bold dark:text-white">+3,462</h5>
+                                <p class="mb-0 font-sans text-sm leading-normal uppercase dark:text-white text-red-600 dark:opacity-60">Pengeluaran Mesjid</p>
+                                <h5 class="mb-2 font-bold dark:text-white">Rp186.283</h5>
                                 <p class="mb-0 dark:text-white dark:opacity-60">
-                                    <span class="text-sm font-bold leading-normal text-red-600">-2%</span>
-                                    since last quarter
+                                    <span class="text-sm font-bold leading-normal text-red-600">+3.48%</span>
+                                    Dibandingkan bulan sebelumnya
                                 </p>
                             </div>
                         </div>
@@ -107,47 +107,76 @@
             </div>
         </div>
 
-        <div class="w-full max-w-full px-3 lg:w-5/12 lg:flex-none">
-            <div slider class="relative w-full h-full overflow-hidden rounded-2xl">
-                <!-- slide 1 -->
-                <div slide class="absolute w-full h-full transition-all duration-500">
-                    <img class="object-cover h-full" src="../assets/img/carousel-1.jpg" alt="carousel image" />
-                    <div class="block text-start ml-12 left-0 bottom-0 absolute right-[15%] pt-5 pb-5 text-white">
-                        <div class="inline-block w-8 h-8 mb-4 text-center text-black bg-white bg-center rounded-lg fill-current stroke-none">
-                            <i class="top-0.75 text-xxs relative text-slate-700 ni ni-camera-compact"></i>
+        <div class="w-full max-w-full px-3 mt-0 lg:w-5/12 lg:flex-none">
+            <div class="border-black/12.5 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl relative flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white bg-clip-border">
+                <div class="antialiased sans-serif bg-gray-100 h-auto">
+                    <div x-data="app()" x-init="[initDate(), getNoOfDays()]" x-cloak>
+                        <div class="container mx-auto px-4 py-4 md:py-12">
+                            <div class="bg-white rounded-lg shadow overflow-hidden">
+                                <div class="flex items-center justify-between py-2 px-6">
+                                    <div>
+                                        <span x-text="MONTH_NAMES[month]" class="text-lg font-bold text-gray-800 mb-2"></span>
+                                        <span x-text="year" class="ml-1 text-lg text-gray-600 font-normal"></span>
+                                    </div>
+                                    <div class="border rounded-lg px-1 flex items-center">
+                                        <button type="button" class="leading-none rounded-lg transition ease-in-out duration-100 inline-flex cursor-pointer hover:bg-gray-200 p-1 items-center"
+                                            :class="{'cursor-not-allowed opacity-25': month == 0 }" :disabled="month == 0 ? true : false"
+                                            @click="month--; getNoOfDays()">
+                                            <svg class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                                            </svg>
+                                        </button>
+                                        <button type="button" class="leading-none rounded-lg transition ease-in-out duration-100 inline-flex items-center cursor-pointer hover:bg-gray-200 p-1"
+                                            :class="{'cursor-not-allowed opacity-25': month == 11 }" :disabled="month == 11 ? true : false"
+                                            @click="month++; getNoOfDays()">
+                                            <svg class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="-mx-1 -mb-1">
+                                    <div class="flex flex-wrap mb-2">
+                                        <template x-for="(day, index) in DAYS" :key="index">
+                                            <div class="px-2 py-1 text-center" style="width: 14.26%">
+                                                <div x-text="day" class="text-gray-600 text-sm uppercase tracking-wide font-bold"></div>
+                                            </div>
+                                        </template>
+                                    </div>
+
+                                    <div class="flex flex-wrap border-t border-l">
+                                        <template x-for="blankday in blankdays">
+                                            <div class="text-center border-r border-b px-4 pt-2" style="width: 14.28%; height: 60px"></div>
+                                        </template>
+                                        <template x-for="(date, dateIndex) in no_of_days" :key="dateIndex">
+                                            <div style="width: 14.28%; height: 60px" class="px-4 pt-2 border-r border-b relative">
+                                                <div @click="showEventModal(date)" x-text="date"
+                                                    class="inline-flex w-8 h-8 items-center justify-center cursor-pointer text-center leading-none rounded-full transition ease-in-out duration-100"
+                                                    :class="{'bg-blue-500 text-white': isToday(date), 'text-gray-700 hover:bg-blue-200': !isToday(date) }"></div>
+                                                <div class="overflow-y-auto mt-1" style="height: 60px;">
+                                                    <template x-for="event in events.filter(e => new Date(e.event_date).toDateString() ===  new Date(year, month, date).toDateString() )">
+                                                        <div class="px-2 py-1 rounded-lg mt-1 overflow-hidden border"
+                                                            :class="{
+                                                'border-blue-200 text-blue-800 bg-blue-100': event.event_theme === 'blue',
+                                                'border-red-200 text-red-800 bg-red-100': event.event_theme === 'red',
+                                                'border-yellow-200 text-yellow-800 bg-yellow-100': event.event_theme === 'yellow',
+                                                'border-green-200 text-green-800 bg-green-100': event.event_theme === 'green',
+                                                'border-purple-200 text-purple-800 bg-purple-100': event.event_theme === 'purple'
+                                            }">
+                                                            <p x-text="event.event_title" class="text-sm truncate leading-tight"></p>
+                                                        </div>
+                                                    </template>
+                                                </div>
+                                            </div>
+                                        </template>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <h5 class="mb-1 text-white">Get started with Argon</h5>
-                        <p class="dark:opacity-80">There’s nothing I really wanted to do in life that I wasn’t able to get good at.</p>
                     </div>
                 </div>
 
-                <!-- slide 2 -->
-                <div slide class="absolute w-full h-full transition-all duration-500">
-                    <img class="object-cover h-full" src="../assets/img/carousel-2.jpg" alt="carousel image" />
-                    <div class="block text-start ml-12 left-0 bottom-0 absolute right-[15%] pt-5 pb-5 text-white">
-                        <div class="inline-block w-8 h-8 mb-4 text-center text-black bg-white bg-center rounded-lg fill-current stroke-none">
-                            <i class="top-0.75 text-xxs relative text-slate-700 ni ni-bulb-61"></i>
-                        </div>
-                        <h5 class="mb-1 text-white">Faster way to create web pages</h5>
-                        <p class="dark:opacity-80">That’s my skill. I’m not really specifically talented at anything except for the ability to learn.</p>
-                    </div>
-                </div>
-
-                <!-- slide 3 -->
-                <div slide class="absolute w-full h-full transition-all duration-500">
-                    <img class="object-cover h-full" src="../assets/img/carousel-3.jpg" alt="carousel image" />
-                    <div class="block text-start ml-12 left-0 bottom-0 absolute right-[15%] pt-5 pb-5 text-white">
-                        <div class="inline-block w-8 h-8 mb-4 text-center text-black bg-white bg-center rounded-lg fill-current stroke-none">
-                            <i class="top-0.75 text-xxs relative text-slate-700 ni ni-trophy"></i>
-                        </div>
-                        <h5 class="mb-1 text-white">Share with us your design tips!</h5>
-                        <p class="dark:opacity-80">Don’t be afraid to be wrong because you can’t learn anything from a compliment.</p>
-                    </div>
-                </div>
-
-                <!-- Control buttons -->
-                <button btn-next class="absolute z-10 w-10 h-10 p-2 text-lg text-white border-none opacity-50 cursor-pointer hover:opacity-100 far fa-chevron-right active:scale-110 top-6 right-4"></button>
-                <button btn-prev class="absolute z-10 w-10 h-10 p-2 text-lg text-white border-none opacity-50 cursor-pointer hover:opacity-100 far fa-chevron-left active:scale-110 top-6 right-16"></button>
             </div>
         </div>
     </div>
@@ -368,4 +397,128 @@
     <!-- end footer-->
 </div>
 <!-- end cards -->
+<?= $this->endSection() ?>
+
+<?= $this->section('script') ?>
+<script>
+    const MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+    function app() {
+        return {
+            month: '',
+            year: '',
+            no_of_days: [],
+            blankdays: [],
+            days: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+
+            events: [{
+                    event_date: new Date(2020, 3, 1),
+                    event_title: "April Fool's Day",
+                    event_theme: 'blue'
+                },
+
+                {
+                    event_date: new Date(2020, 3, 10),
+                    event_title: "Birthday",
+                    event_theme: 'red'
+                },
+
+                {
+                    event_date: new Date(2020, 3, 16),
+                    event_title: "Upcoming Event",
+                    event_theme: 'green'
+                }
+            ],
+            event_title: '',
+            event_date: '',
+            event_theme: 'blue',
+
+            themes: [{
+                    value: "blue",
+                    label: "Blue Theme"
+                },
+                {
+                    value: "red",
+                    label: "Red Theme"
+                },
+                {
+                    value: "yellow",
+                    label: "Yellow Theme"
+                },
+                {
+                    value: "green",
+                    label: "Green Theme"
+                },
+                {
+                    value: "purple",
+                    label: "Purple Theme"
+                }
+            ],
+
+            openEventModal: false,
+
+            initDate() {
+                let today = new Date();
+                this.month = today.getMonth();
+                this.year = today.getFullYear();
+                this.datepickerValue = new Date(this.year, this.month, today.getDate()).toDateString();
+            },
+
+            isToday(date) {
+                const today = new Date();
+                const d = new Date(this.year, this.month, date);
+
+                return today.toDateString() === d.toDateString() ? true : false;
+            },
+
+            showEventModal(date) {
+                // open the modal
+                this.openEventModal = true;
+                this.event_date = new Date(this.year, this.month, date).toDateString();
+            },
+
+            addEvent() {
+                if (this.event_title == '') {
+                    return;
+                }
+
+                this.events.push({
+                    event_date: this.event_date,
+                    event_title: this.event_title,
+                    event_theme: this.event_theme
+                });
+
+                console.log(this.events);
+
+                // clear the form data
+                this.event_title = '';
+                this.event_date = '';
+                this.event_theme = 'blue';
+
+                //close the modal
+                this.openEventModal = false;
+            },
+
+            getNoOfDays() {
+                let daysInMonth = new Date(this.year, this.month + 1, 0).getDate();
+
+                // find where to start calendar day of week
+                let dayOfWeek = new Date(this.year, this.month).getDay();
+                let blankdaysArray = [];
+                for (var i = 1; i <= dayOfWeek; i++) {
+                    blankdaysArray.push(i);
+                }
+
+                let daysArray = [];
+                for (var i = 1; i <= daysInMonth; i++) {
+                    daysArray.push(i);
+                }
+
+                this.blankdays = blankdaysArray;
+                this.no_of_days = daysArray;
+            }
+        }
+    }
+</script>
 <?= $this->endSection() ?>

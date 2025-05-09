@@ -90,30 +90,24 @@
 
     <!-- cards row 2 -->
     <div class="flex flex-wrap mt-6 -mx-3">
-        <div class="w-full max-w-full px-3 mt-0 lg:w-7/12 lg:flex-none">
+        <div class="w-full max-w-full px-3 mt-0 lg:w-8/12 lg:flex-none">
             <div class="border-black/12.5 dark:bg-slate-850 dark:shadow-dark-xl shadow-xl relative z-20 flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white bg-clip-border">
                 <div class="border-black/12.5 mb-0 rounded-t-2xl border-b-0 border-solid p-6 pt-4 pb-0">
-                    <h6 class="capitalize dark:text-white">Sales overview</h6>
-                    <p class="mb-0 text-sm leading-normal dark:text-white dark:opacity-60">
-                        <i class="fa fa-arrow-up text-emerald-500"></i>
-                        <span class="font-semibold">4% more</span> in 2021
-                    </p>
+                    <h6 class="capitalize dark:text-white">Grafik Pemasukan dan Pengeluaran <span class="text-sm font-bold leading-normal text-blue-500">(06.00 WIB - 21.00)</span></h6>
                 </div>
                 <div class="flex-auto p-4">
-                    <div>
-                        <canvas id="chart-line" height="300"></canvas>
-                    </div>
+                     <div id="chart" class="h-full"></div>
                 </div>
             </div>
         </div>
 
-        <div class="w-full max-w-full px-3 mt-0 lg:w-5/12 lg:flex-none">
+        <div class="w-full max-w-full px-3 mt-0 lg:w-4/12 lg:flex-none">
             <div class="border-black/12.5 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl relative flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white bg-clip-border">
                 <div class="antialiased sans-serif bg-gray-100 h-auto">
                     <div x-data="app()" x-init="[initDate(), getNoOfDays()]" x-cloak>
                         <div class="container mx-auto px-4 py-4 md:py-12">
                             <div class="bg-white rounded-lg shadow overflow-hidden">
-                                <div class="flex items-center justify-between py-2 px-6">
+                                <div class="flex items-center justify-between py-2 px-2">
                                     <div>
                                         <span x-text="MONTH_NAMES[month]" class="text-lg font-bold text-gray-800 mb-2"></span>
                                         <span x-text="year" class="ml-1 text-lg text-gray-600 font-normal"></span>
@@ -140,17 +134,17 @@
                                     <div class="flex flex-wrap mb-2">
                                         <template x-for="(day, index) in DAYS" :key="index">
                                             <div class="px-2 py-1 text-center" style="width: 14.26%">
-                                                <div x-text="day" class="text-gray-600 text-sm uppercase tracking-wide font-bold"></div>
+                                                <div x-text="day" class="text-gray-600 text-xs uppercase tracking-wide font-bold"></div>
                                             </div>
                                         </template>
                                     </div>
 
                                     <div class="flex flex-wrap border-t border-l">
                                         <template x-for="blankday in blankdays">
-                                            <div class="text-center border-r border-b px-4 pt-2" style="width: 14.28%; height: 60px"></div>
+                                            <div class="text-center border-r border-b px-4 pt-2" style="width: 14.28%; height: 55px"></div>
                                         </template>
                                         <template x-for="(date, dateIndex) in no_of_days" :key="dateIndex">
-                                            <div style="width: 14.28%; height: 60px" class="px-4 pt-2 border-r border-b relative">
+                                            <div style="width: 14.28%; height: 55px" class="px-4 pt-2 border-r border-b relative">
                                                 <div @click="showEventModal(date)" x-text="date"
                                                     class="inline-flex w-8 h-8 items-center justify-center cursor-pointer text-center leading-none rounded-full transition ease-in-out duration-100"
                                                     :class="{'bg-blue-500 text-white': isToday(date), 'text-gray-700 hover:bg-blue-200': !isToday(date) }"></div>
@@ -184,11 +178,11 @@
     <!-- cards row 3 -->
 
     <div class="flex flex-wrap mt-6 -mx-3">
-        <div class="w-full max-w-full px-3 mt-0 mb-6 lg:mb-0 lg:w-7/12 lg:flex-none">
+        <div class="w-full max-w-full px-3 mt-0 mb-6 lg:mb-0 lg:w-8/12 lg:flex-none">
             <div class="relative flex flex-col min-w-0 break-words bg-white border-0 border-solid shadow-xl dark:bg-slate-850 dark:shadow-dark-xl dark:bg-gray-950 border-black-125 rounded-2xl bg-clip-border">
                 <div class="p-4 pb-0 mb-0 rounded-t-4">
                     <div class="flex justify-between">
-                        <h6 class="mb-2 dark:text-white">Sales by Country</h6>
+                        <h6 class="mb-2 dark:text-white">Aktivitas Terbaru</h6>
                     </div>
                 </div>
                 <div class="overflow-x-auto">
@@ -323,7 +317,7 @@
                 </div>
             </div>
         </div>
-        <div class="w-full max-w-full px-3 mt-0 lg:w-5/12 lg:flex-none">
+        <div class="w-full max-w-full px-3 mt-0 lg:w-4/12 lg:flex-none">
             <div class="border-black/12.5 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl relative flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white bg-clip-border">
                 <div class="p-4 pb-0 rounded-t-4">
                     <h6 class="mb-0 dark:text-white">Categories</h6>
@@ -400,6 +394,51 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('script') ?>
+<script>
+    var options = {
+        chart: {
+            type: 'bar',
+            height: 400,
+            stacked: false,
+            toolbar: {
+                show: false
+            }
+        },
+        series: [{
+                name: 'Pemasukan',
+                data: [100000, 20000, 30000, 40000, 50000, 60000, 100000, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                color: '#3B82F6' // blue-500
+            },
+            {
+                name: 'Pengeluaran',
+                data: [100000, 20000, 30000, 40000, 50000, 0, 0, 700000, 0, 0, 0, 0, 300000, 0, 0, 0],
+                color: '#FBBF24' // yellow-500
+            }
+        ],
+        xaxis: {
+            categories: ['06.00', '07.00', '08.00', '09.00', '10.00', '11.00', '12.00', '13.00', '14.00', '15.00', '16.00', '17.00', '18.00', '19.00', '20.00', '21.00'],
+            title: {
+                text: ""
+            }
+        },
+        yaxis: {
+            labels: {
+                formatter: function(val) {
+                    return val.toFixed(0);
+                }
+            }
+        },
+        dataLabels: {
+            enabled: false
+        },
+        legend: {
+            position: 'bottom'
+        }
+    };
+
+    var chart = new ApexCharts(document.querySelector("#chart"), options);
+    chart.render();
+</script>
 <script>
     const MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];

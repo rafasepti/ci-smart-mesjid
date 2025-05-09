@@ -1,5 +1,9 @@
 <?= $this->extend('template') ?>
 
+<?= $this->section('breadcrumb') ?>
+    <h6 class="mb-0 font-bold text-white capitalize">Dashbor Mesjid Al-Ikhlas 24 November 2024</h6>
+<?= $this->endSection() ?>
+
 <?= $this->section('content') ?>
 <!-- cards -->
 <div class="w-full px-6 py-6 mx-auto">

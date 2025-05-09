@@ -17,7 +17,15 @@
                     <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
                         <i class="relative top-0 text-sm leading-normal text-blue-500 ni ni-tv-2"></i>
                     </div>
-                    <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Dashboard</span>
+                    <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Dashboard Mesjid</span>
+                </a>
+            </li>
+            <li class="mt-0.5 w-full">
+                <a class="dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors" href="../pages/dashboard.html">
+                    <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
+                        <i class="relative top-0 text-sm leading-normal text-blue-500 ni ni-tv-2"></i>
+                    </div>
+                    <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Dashboard Publik</span>
                 </a>
             </li>
 
@@ -26,7 +34,7 @@
                     <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
                         <i class="relative top-0 text-sm leading-normal text-orange-500 ni ni-calendar-grid-58"></i>
                     </div>
-                    <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Tables</span>
+                    <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Kelola Acara</span>
                 </a>
             </li>
 
@@ -35,56 +43,19 @@
                     <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center fill-current stroke-0 text-center xl:p-2.5">
                         <i class="relative top-0 text-sm leading-normal text-emerald-500 ni ni-credit-card"></i>
                     </div>
-                    <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Billing</span>
+                    <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Kelola Transaksi</span>
                 </a>
             </li>
 
             <li class="mt-0.5 w-full">
                 <a class=" dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors" href="../pages/virtual-reality.html">
-                    <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
-                        <i class="relative top-0 text-sm leading-normal text-cyan-500 ni ni-app"></i>
-                    </div>
-                    <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Virtual Reality</span>
-                </a>
-            </li>
+                    <div class="mr-2 flex items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
+                        <svg class="w-4 h-4 relative top-0 text-sm leading-normal text-cyan-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" d="M12 6a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm-1.5 8a4 4 0 0 0-4 4 2 2 0 0 0 2 2h7a2 2 0 0 0 2-2 4 4 0 0 0-4-4h-3Zm6.82-3.096a5.51 5.51 0 0 0-2.797-6.293 3.5 3.5 0 1 1 2.796 6.292ZM19.5 18h.5a2 2 0 0 0 2-2 4 4 0 0 0-4-4h-1.1a5.503 5.503 0 0 1-.471.762A5.998 5.998 0 0 1 19.5 18ZM4 7.5a3.5 3.5 0 0 1 5.477-2.889 5.5 5.5 0 0 0-2.796 6.293A3.501 3.501 0 0 1 4 7.5ZM7.1 12H6a4 4 0 0 0-4 4 2 2 0 0 0 2 2h.5a5.998 5.998 0 0 1 3.071-5.238A5.505 5.505 0 0 1 7.1 12Z" clip-rule="evenodd" />
+                        </svg>
 
-            <li class="mt-0.5 w-full">
-                <a class=" dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors" href="../pages/rtl.html">
-                    <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
-                        <i class="relative top-0 text-sm leading-normal text-red-600 ni ni-world-2"></i>
                     </div>
-                    <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">RTL</span>
-                </a>
-            </li>
-
-            <li class="w-full mt-4">
-                <h6 class="pl-6 ml-2 text-xs font-bold leading-tight uppercase dark:text-white opacity-60">Account pages</h6>
-            </li>
-
-            <li class="mt-0.5 w-full">
-                <a class=" dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors" href="../pages/profile.html">
-                    <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
-                        <i class="relative top-0 text-sm leading-normal text-slate-700 ni ni-single-02"></i>
-                    </div>
-                    <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Profile</span>
-                </a>
-            </li>
-
-            <li class="mt-0.5 w-full">
-                <a class=" dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors" href="../pages/sign-in.html">
-                    <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
-                        <i class="relative top-0 text-sm leading-normal text-orange-500 ni ni-single-copy-04"></i>
-                    </div>
-                    <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Sign In</span>
-                </a>
-            </li>
-
-            <li class="mt-0.5 w-full">
-                <a class=" dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors" href="../pages/sign-up.html">
-                    <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
-                        <i class="relative top-0 text-sm leading-normal text-cyan-500 ni ni-collection"></i>
-                    </div>
-                    <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Sign Up</span>
+                    <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Kelola Warga</span>
                 </a>
             </li>
         </ul>

@@ -19,6 +19,8 @@
 
     <!-- Main Styling -->
     <link href="<?= base_url('assets/css/argon-dashboard-tailwind.css?v=1.0.1') ?>" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
+
     <!-- Popper -->
     <script src="https://unpkg.com/@popperjs/core@2"></script>
 </head>

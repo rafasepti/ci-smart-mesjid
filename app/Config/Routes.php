@@ -12,4 +12,7 @@ $routes->get('/', function () {
 $routes->get('/BKM/dashboard', function () {
     return view('BKM/dashboard');
 });
+$routes->get('/UUS/dashboard', function () {
+    return view('UUS/dashboard');
+});
 

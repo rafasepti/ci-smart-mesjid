@@ -55,6 +55,21 @@
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.46.0/dist/apexcharts.min.js"></script>
 
+<!-- JavaScript for Dynamic Sidebar -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const path = window.location.pathname;
+        const sidebarUUS = document.getElementById("sidebar-uus");
+        const sidebarBKM = document.getElementById("sidebar-bkm");
+
+        if (path.startsWith("/UUS")) {
+            sidebarUUS.classList.remove("hidden");
+        } else if (path.startsWith("/BKM")) {
+            sidebarBKM.classList.remove("hidden");
+        }
+    });
+</script>
+
 <?= $this->renderSection('script') ?>
 
 </html>

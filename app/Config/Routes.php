@@ -9,7 +9,7 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', function () {
     return view('login');
 });
-$routes->get('/dashboard', function () {
+$routes->get('/BKM/dashboard', function () {
     return view('BKM/dashboard');
 });
 

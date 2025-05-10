@@ -16,7 +16,7 @@
 */
 var page = window.location.pathname.split("/").pop().split(".")[0];
 var aux = window.location.pathname.split("/");
-var to_build = (aux.includes('pages') || aux.includes('docs') ?'../':'./');
+var to_build = window.location.origin + "/"; // Path absolut dari URL saat ini
 var root = window.location.pathname.split("/")
 if (!aux.includes("pages")) {
   page = "dashboard";
